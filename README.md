@@ -1,2 +1,2 @@
-# Ultimate_Tennis_Soundboard
+# Ultimate Tennis Soundboard
 Quick, pre-game motivation.
