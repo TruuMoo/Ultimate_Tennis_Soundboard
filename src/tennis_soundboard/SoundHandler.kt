@@ -1,30 +1,32 @@
-package tennis_soundboard;
+package tennis_soundboard
 
-import java.applet.Applet;
-import java.applet.AudioClip;
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.applet.Applet
+import java.io.File
+import java.net.MalformedURLException
+import java.net.URL
 
-
-public class SoundHandler {
-    
-    public void playSound(String sound) {
+class SoundHandler {
+    fun playSound(sound: String) {
         try {
-            File file = new File(("src/tennis_soundboard/audio/" + sound + ".wav"));
-            URL url = null;
+
+            val file = File("src/tennis_soundboard/audio/$sound.wav")
+            var url: URL? = null
+
             if (file.canRead()) {
-                url = file.toURI().toURL();
+                url = file.toURI().toURL()
             } else {
-                System.out.println("Could not read file.");
-                System.out.println(file.getAbsoluteFile());
+                println("Could not read file.")
+                println(file.absoluteFile)
             }
-            System.out.println(url);
-            AudioClip clip = Applet.newAudioClip(url);
-            clip.play();
-            System.out.println("playing file: " + sound + ".wav");
-        } catch (MalformedURLException e) {
-            System.out.println("ERROR");
+
+            println(url)
+            val clip = Applet.newAudioClip(url)
+            clip.play()
+
+            println("playing file: $sound.wav")
+        } catch (e: MalformedURLException) {
+            println("ERROR")
+            // print if, for some reason, the sound cannot play.
         }
     }
 }
