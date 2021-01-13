@@ -21,6 +21,7 @@ public class GUI implements ActionListener{
 
     GUI(int height, int width) {
 
+
         frame.setTitle("Tennis Soundboard");
         frame.setResizable(false);
         frame.setSize(width, height);
